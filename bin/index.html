@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Teamizer</title>
+    <style>
+        .content {
+            max-width: 280px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        .center {
+            margin: auto;
+            text-align: center;
+        }
+
+        select {
+            min-width: 135px;
+        }
+
+        ul {
+            padding-left: 5px;
+            border: 1px solid #888;
+            min-width: 135px;
+            min-height: 210px;
+            list-style-type: none;
+            margin-left: 10px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        li{
+            text-align: left;
+        }
+        textarea {
+            min-width: 280px;
+            min-height: 200px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="row">
+            <h1 class="center">Teamizer</h1>
+        </div>
+        <br/>
+        <div class="row">
+            <label>Name:</label>
+            <input id="newMember"></input>
+            <button id="addPerson" onclick="addPerson()">Add Member</button>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="center">
+                <label class="center">Current People</label>
+                <select id="allPeople" size=15 onchange="updateCompatibilityList()"></select>
+            </div>
+            <div class="center">
+                <label class="center">Constraints</label>
+                <ul id="compatabilities"></ul>
+            </div>
+            
+        </div>
+        <br/>
+        <div class="row">
+            <div class="center">
+                <label>Number of Teams</label>
+                <input id="nt" value="2"></input>
+            </div>
+            <div class="center">
+                <label>People Per Team</label>
+                <input id="ppt" value="1"></input>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <button id="removePerson" disabled onclick="removePerson()">Remove Member</button>
+            <button onclick="getTeams()">Get Teams</button>
+            <button onclick="clearTeams()">Clear Everything</button>
+        </div>
+        <br/>
+        <div class="row">
+            <label class="center">Teams</label>
+        </div>
+        <div class="row">
+            <textarea id="solution" class="center" readonly></textarea>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

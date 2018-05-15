@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outFile": "bin/app.js",
+        "outDir": "bin",
+        "target": "es5",
+        "sourceMap": false,
+        "declaration": false
+    }
+}
